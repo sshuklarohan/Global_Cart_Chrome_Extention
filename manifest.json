@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Save Page to List",
-  "description": "Save the current page to a list with custom names.",
+  "name": "Global Cart",
+  "description": "Store all shopping items from multiple sites in one cart",
   "version": "1.0",
   "permissions": ["activeTab", "storage"],
   "action": {

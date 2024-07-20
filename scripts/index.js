@@ -1,30 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const saveButton = document.getElementById('saveButton');
-    const ProductNameInput = document.getElementById('ProductName');
-    const ProductPriceInput = document.getElementById('ProductPrice');
     const linksList = document.getElementById('List');
+    const addButton = document.getElementById('AddButton');
   
-    saveButton.addEventListener('click', () => {
-      const productName = ProductNameInput.value;
-      const productPrice = ProductPriceInput.value;
-      if (productName && productPrice) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-          const currentTab = tabs[0];
-          const linkUrl = currentTab.url;
-  
-          chrome.storage.sync.get(['savedItems'], (result) => {
-            let savedItems = result.savedItems || [];
-            savedItems.push({ name: productName, price: productPrice, url: linkUrl });
-            chrome.storage.sync.set({ savedItems: savedItems }, () => {
-              renderLinks();
-              ProductNameInput.value = '';
-              ProductPriceInput.value = '';
-            });
-          });
-        });
-      }
+    
+    addButton.addEventListener('click', () => {
+      window.location.href = 'addcart.html';
     });
-  
+    
     function renderLinks() {
       chrome.storage.sync.get(['savedItems'], (result) => {
         const savedItems = result.savedItems || [];
