@@ -34,8 +34,9 @@ saveButton.addEventListener('click', () => {
 
 
 document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' || event.key === 'Esc') {
-        window.location.href = 'index.html';
-    }
+  if (event.key === 'Escape' || event.key === 'Esc') {
+      event.preventDefault();
+      window.location.href = 'index.html';
+  }
 });
   
