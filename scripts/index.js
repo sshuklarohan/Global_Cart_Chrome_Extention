@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const total = document.getElementById('Total');
+    var sumPrices = 0;
     const linksList = document.getElementById('List');
     const addButton = document.getElementById('AddButton');
   
@@ -9,10 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function renderLinks() {
       chrome.storage.sync.get(['savedItems'], (result) => {
+        sumPrices = 0;
         const savedItems = result.savedItems || [];
         linksList.innerHTML = '';
         savedItems.forEach((link, index) => {
-          addListItem(link, index);
+          addListItem(link, index,);
+          total.innerText = "$" + sumPrices;
         });
       });
     }
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const a = document.createElement('a');
       const price = document.createElement('span');
       const deleteButton = document.createElement('span');
+      sumPrices += parseFloat(link.price);
 
 
       price.innerText = link.price;
