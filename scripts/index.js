@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
     }
-  
+
     renderLinks();
 
     function addListItem(link, index) {
@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
       sumPrices += parseFloat(link.price);
 
 
-      price.innerText = link.price;
+      price.innerText = "$ " + link.price;
       price.className = "price";
       a.href = link.url;
       a.textContent = link.name;
-      a.className = "item_name"
+      a.className = "item-name"
       a.target = '_blank';
       deleteButton.innerText = "x";
-      deleteButton.className = "delete_button";
+      deleteButton.className = "delete-button";
 
       deleteButton.addEventListener('click', ()=> deleteItem(index));
 
