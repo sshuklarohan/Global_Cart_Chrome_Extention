@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Save Page to List",
+  "description": "Save the current page to a list with custom names.",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "32": "icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
