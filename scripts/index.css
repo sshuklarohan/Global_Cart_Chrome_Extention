@@ -1,3 +1,7 @@
+html{
+    border-radius: 5px;
+}
+
 
 body {
    background-color: #3f3f3f;
@@ -5,20 +9,28 @@ body {
    padding: 0;
    font-family: sans-serif;
    width: 200px;
-   height: 350px; 
+   height: 350px;
+   overflow-y: scroll;
+   border-radius: 15px;
 }
 
 h3{
     font-weight: bold;
+    padding: 5px;
     color: antiquewhite;
-    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: min-content;
 }
 
+
+
 .AddButton {
-    align-items: right;
-    padding: 10px;
-    border-radius: 2px;
+    padding: 2px 6px;
+    border-radius: 5px; 
     background-color: #121212;
+    cursor: default;
 }
 
 
@@ -42,17 +54,33 @@ ul li{
 
 }
 
-.item-name{
-    width: 30px
-
+ul li:hover{
+    transition: 0.2s;
+    transform: scale(1.05);
 }
+
+
+
+.item-name{
+    width: 80px;
+    color: antiquewhite;
+}
+
+.item-name:hover{
+    transition: 0.2s;
+    color: #59ada1;
+}
+
+
 
 .price{
     width: 150px;
+    text-align: end;
+    padding-right: 10px;
 }
 
 .delete-button{
-    width: 15px;
+    width: 17px;
     border-radius: 5px;
     justify-content: center;
     text-align: center;
@@ -62,6 +90,18 @@ ul li{
     background-color: #f95e4a;
     transition: 0.2s;
     transform: scale(1.25);
+    cursor: default;
+}
+
+.Subtotal {
+    color: antiquewhite;
+    text-align: right;
+    padding-right: 17px;
+    padding-left: 10px;
+    margin: 0 auto;
+    font-weight: bold;
+
+
 }
 
 

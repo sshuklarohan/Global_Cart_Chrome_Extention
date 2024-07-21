@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const savedItems = result.savedItems || [];
         linksList.innerHTML = '';
         savedItems.forEach((link, index) => {
-          addListItem(link, index,);
-          total.innerText = "$" + sumPrices;
+          addListItem(link, index);
         });
+        total.innerText = "Subtotal:   $" + sumPrices.toFixed(2);
       });
     }
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       sumPrices += parseFloat(link.price);
 
 
-      price.innerText = "$ " + link.price;
+      price.innerText = "$" + link.price;
       price.className = "price";
       a.href = link.url;
       a.textContent = link.name;
@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
       deleteButton.className = "delete-button";
 
       deleteButton.addEventListener('click', ()=> deleteItem(index));
-
-
       li.appendChild(a);
       li.appendChild(price);
       li.appendChild(deleteButton);
