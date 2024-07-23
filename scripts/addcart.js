@@ -2,7 +2,7 @@ const saveButton = document.getElementById('saveButton');
 const ProductNameInput = document.getElementById('ProductName');
 const ProductPriceInput = document.getElementById('ProductPrice');
 
-
+//Add icon for website links (not possible to drag and drop images with chrome extention)
 
 saveButton.addEventListener('click', () => {
     const productName = ProductNameInput.value;
@@ -12,10 +12,12 @@ saveButton.addEventListener('click', () => {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const currentTab = tabs[0];
         const linkUrl = currentTab.url;
+        
 
         chrome.storage.sync.get(['savedItems'], (result) => {
           let savedItems = result.savedItems || [];
-          savedItems.push({ name: productName, price: productPrice, url: linkUrl });
+          savedItems.push({ name: productName, price: productPrice, url: linkUrl});
+
           chrome.storage.sync.set({ savedItems: savedItems }, () => {
             ProductNameInput.value = '';
             ProductPriceInput.value = '';

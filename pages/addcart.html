@@ -5,9 +5,13 @@
 </head>
 <body>
   <h3>Add item</h3>
-  <input type="text" id="ProductName" placeholder="Enter name of product">
-  <input type="text" id="ProductPrice" placeholder="Enter Price">
-  <button id="saveButton">Add</button>
+  <div class="input-box">
+    <input type="text" class="input-field" id="ProductName" placeholder="Enter name of product" autocomplete="off" required>
+  </div>
+  <div class="input-box">
+    <input type="text" class="input-field" id="ProductPrice" placeholder="Enter Price" autocomplete="off" required>
+  </div>  
+  <button id="saveButton">Add to Cart</button>
   <script src="../scripts/addcart.js"></script>
   <link rel="stylesheet" href="../scripts/addcart.css">
 </body>
